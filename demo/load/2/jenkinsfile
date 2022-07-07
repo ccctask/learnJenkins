@@ -1,0 +1,10 @@
+// In case the methods called on your loaded groovy script come with their own node blocks, you should not call those methods from within the node block loading the script. Otherwise you'd be blocking the outer node for no reason.
+
+
+def exampleModule
+node {
+    checkout scm // could not get it running w/o checkout scm
+    exampleModule = load "script/Example.Groovy"
+}
+exampleModule.exampleMethod()
+exampleModule.otherExampleMethod()

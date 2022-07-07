@@ -1,0 +1,3 @@
+node {
+    new ScriptedFooStage(this).execute('Foo', true)
+}
